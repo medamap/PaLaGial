@@ -1,0 +1,6 @@
+# 環境コレクション（グローバル）。プロジェクト側は allow-list で使う環境＋経路を宣言する。
+environments:
+  - id: <env-id>            # 例: agent-vm / owner-pc / owner-phone / server-1
+    name: ""
+    routes:
+      - id: <route-id>      # 例: cloud-browser / shell / connectors / gui / ssh

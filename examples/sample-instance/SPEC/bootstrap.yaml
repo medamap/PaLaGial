@@ -1,0 +1,24 @@
+# SPEC bootstrap — 全ランの入口（ほぼ不変）
+# 規格の変更は版フォルダ側で行い、ここは触らない。
+bootstrap:
+  version: 1
+  applies_to: "定常ラン、および作業開始時"
+  steps:
+    - { step: 1, action: read_status, file: status.yaml }
+    - step: 2
+      action: branch_on_status
+      branches:
+        STOP: "何もせず終了する（報告もしない）。理由は status.yaml の reason が正"
+        MIGRATION: "現行版の規格で継続する。準備中フォルダを根拠に実行しない"
+        RUNNING: "現行版の規格で通常実行する"
+    - { step: 3, action: resolve_current_version, file: current_version.yaml }
+    - step: 4
+      action: load_spec
+      files: [spec.yaml, environments.yaml, services.yaml]
+    - step: 5
+      action: load_project
+      detail: "対象プロジェクトの定義を読む。allow-list / bind / access ピンを確定し、定義外の環境・経路・サービスは使用禁止"
+    - { step: 6, action: check_runtime_state, files: ["runtime/slots.yaml", "runtime/queue.yaml", "runtime/emergency-queue.yaml"] }
+    - { step: 7, action: hand_off, detail: "プロジェクト固有の入口へ進む。bootstrap 自体は作業内容を定義しない" }
+  notes:
+    - "サブエージェントは親タスクの枠と規格解釈を相続し、個別に bootstrap を再実行しない"

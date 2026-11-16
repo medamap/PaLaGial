@@ -1,0 +1,26 @@
+# 家の設定（インスタンス設定）の雛形 — SPEC フォルダ直下に house.yaml として置く。
+# これは規格ではなく、そのインスタンスの実設定。表示と報告レンダリングにのみ効く。
+house:
+  name: "<家名>"              # ベース家名プール（data/house-names.yaml）を材料に合成した結果
+  reading: "<よみ>"
+  owner_surname: "<オーナーの名字>"
+  synthesis:                  # 合成の過程メモ（材料が追えるように残す）
+    method: "ベース家名の接尾部（suffix）を保ち、オーナー名字の代表1字を頭に付ける（推奨手順。最終形はプロンプト合成で『良い感じの響き』にする）"
+    base_material: { name: "<ベース家名>", suffix: "<接尾部>", source: "data/house-names.yaml" }
+    taken_character: "<代表1字>"
+    result: "<家名>"
+    candidates_considered: [] # 候補と不採用理由を残すと後で選び直せる
+  head:
+    agent_name: "<エージェント名>"
+    age_bracket: "ナイスミドル"   # 当主のビジュアル年齢枠（F12）。表示・描画用
+    display_name: "<家名＋エージェント名>"   # 表示のみ。当主は素の口調で語る
+  staff_singletons:
+    # じいや・ばあやは名前のみを持つ。名字は家名で、フルネームは「家名＋名前」（schemas §6）
+    jiiya:    { persona_id: jiiya, given_name: "<インストール時に命名>", full_name: "<家名＋名前>" }
+    baaya:    { persona_id: baaya, given_name: "<インストール時に命名>", full_name: "<家名＋名前>" }
+    tobimaru: { persona_id: tobimaru, name: "飛丸" }   # 名前不変・姓名の概念なし
+  persona_resolution: 零      # 零 / 模糊 / 須臾 / 虚空（阿摩羅は選択不可）
+  avatar:
+    preset_id: null           # data/avatar-presets.yaml から選択。未選択なら null
+    props: null               # 属性プロパティの置き場（描画は後行）
+  note: "ユーザーはギャルではない。ギャル（跡取り娘）はユーザー側の操作プレイヤーで、チャットに登場しない。"

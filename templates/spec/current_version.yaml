@@ -1,0 +1,4 @@
+# 現行版ポインタ。このファイルの書き換え（フリップ）が版切替のコミット点。
+current: spec_<yyyymmdd_hhmmss>
+previous: null
+activated_at: "<ISO8601>"

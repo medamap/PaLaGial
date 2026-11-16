@@ -1,0 +1,5 @@
+# PaLaGial アンカー — 唯一のハードコード地点。配置場所は常に ~/.palagial/config.yaml
+# 全てのラン・インストーラ・他ベンダーのエージェントは、まずこのファイルを読む。
+anchor_version: 1
+install_root: "<絶対パス>"     # 稼働系の在り処。インストーラが実パスに展開して書く
+installed_at: "<ISO8601>"

@@ -1,0 +1,78 @@
+# アバター属性プロパティ（ドライラン：5人分のサンプル）
+# 対象: じいや・ばあや・飛丸＋執事1名（butler-01）＋メイド1名（maid-01）
+# プリセット: western-fantasy（西洋ファンタジー）。描画は後行のため画像は含まない。
+# ※注意: 属性項目の一覧は install-prompt 手順5 の列挙に従ったが、項目名・型・単位の
+#   スキーマ定義はパッケージ内に無いため、キー名はエージェント側で命名した。
+avatar_props:
+  preset_id: western-fantasy
+  members:
+    - persona_id: jiiya
+      name: 鷹司 重蔵
+      class: jiiya
+      outfit: "深青に銀の縁取りの執事長服（宮廷様式、節度あるデザイン）"
+      face: "白い口ひげ、穏やかだが鋭い眼差し、貫禄のある顔立ち"
+      body_type: "高齢ながら背筋の伸びた均整型"
+      hair_color: "白髪"
+      hair_style: "整然と撫でつけ"
+      skin_tone: "標準"
+      eye_color: "黒"          # personas.yaml の profile.appearance を優先（プリセットの宝石色傾向とは異なる。優先順位の規定はパッケージ内に無い）
+      three_sizes: { bust: 92, waist: 80, hip: 90, unit: cm }
+      height_cm: 172
+      weight_kg: 68
+      age: 72                  # age_bracket「高齢」からの推定値（対応する数値範囲の規定なし）
+    - persona_id: baaya
+      name: 梅乃 つる
+      class: baaya
+      outfit: "白銀と淡い青紫を基調にしたメイド長服（宮廷様式、節度あるデザイン）"
+      face: "穏やかな皺のある笑顔、温かい人相"
+      body_type: "小柄だが佇まいに威厳がある"
+      hair_color: "白髪"
+      hair_style: "丸く結う"
+      skin_tone: "標準"
+      eye_color: "茶"
+      three_sizes: { bust: 84, waist: 72, hip: 88, unit: cm }
+      height_cm: 152
+      weight_kg: 50
+      age: 70
+    - persona_id: tobimaru
+      name: 飛丸
+      class: tobimaru
+      outfit: "暗色の忍者装束（影の斥候風、顔の下半分を布で覆う。節度あるデザイン）"
+      face: "精悍、顔の下半分は布で隠れることが多い"
+      body_type: "精悍な細身"
+      hair_color: "黒"
+      hair_style: "短く束ねる"
+      skin_tone: "標準"
+      eye_color: "黒"
+      three_sizes: { bust: 86, waist: 70, hip: 84, unit: cm }
+      height_cm: 170
+      weight_kg: 60
+      age: 不詳                # age_bracket「不詳」のため数値化しない（型が他メンバーと揃わない）
+    - persona_id: butler-01
+      name: 白鳥 理人
+      class: butler
+      outfit: "深青と銀を基調にした宮廷執事服（節度あるデザイン）"
+      face: "穏やかで端正な顔立ち"
+      body_type: "中肉中背、姿勢が良い"
+      hair_color: "プラチナブロンド"
+      hair_style: "短髪を七三に分ける"
+      skin_tone: "やや白い"
+      eye_color: "淡い灰青"
+      three_sizes: { bust: 90, waist: 74, hip: 88, unit: cm }
+      height_cm: 176
+      weight_kg: 66
+      age: 26                  # age_bracket「若手」からの推定値
+    - persona_id: maid-01
+      name: 桜庭 乃愛
+      class: maid
+      outfit: "白銀と淡い青紫を基調にした宮廷メイド服（節度あるデザイン）"
+      face: "凛とした気品のある顔立ち"
+      body_type: "背筋の伸びた均整型"
+      hair_color: "栗色"
+      hair_style: "ロングを緩く巻く"
+      skin_tone: "やや白い"
+      eye_color: "琥珀色"
+      three_sizes: { bust: 86, waist: 60, hip: 87, unit: cm }
+      height_cm: 163
+      weight_kg: 52
+      age: 24                  # age_bracket「若手」からの推定値

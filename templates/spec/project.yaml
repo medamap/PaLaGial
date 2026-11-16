@@ -1,0 +1,32 @@
+# プロジェクト定義（1件1ファイル: projects/<slug>.yaml）
+id: <project-slug>
+name: ""
+status: active            # active / dormant / closed
+workspace: "<path>"
+goals: []
+overview: ""
+rules_ref: []
+chats: []               # インストール直後は空でよい。以後の intake（F3）で登録していく
+  # 登録時は次の形（1件以上ある場合）:
+  # - chat_id: "<chat-id>"
+  #   name: ""
+  #   role: operations    # operations / design / implementation / research / successor ...
+  #   predecessor: null
+schedules: []             # スケジューラのID参照のみ（時刻・本文の正本はスケジューラ側）
+environments:             # allow-list（これ以外使わない）
+  - env: <env-id>
+    routes: [<route-id>]
+services:
+  - service: "<provider>::<persona>"
+staff:
+  assignee: null          # 担当者ペルソナのID（data/personas.yaml 参照）。未アサインは null
+                          # 機構だけを担うプロジェクト（global の監査タスク等）は null のままでよい（機構は無名）
+tasks:                  # 例（global の最小形）: [{id: one-off, name: "単発タスクの仮置き"}]
+  - id: <task-id>
+    name: ""
+    schedule: null        # { type: at|every, at: "HH:MM", every_minutes: 0, window: ["HH:MM","HH:MM"], until: "HH:MM", busy_minutes: 0, expected: "30m" }
+    access:
+      env: <env-id>
+      route: <route-id>
+      service: "<provider>::<persona>"
+      forbidden: []

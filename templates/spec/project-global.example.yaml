@@ -1,0 +1,21 @@
+# 初期プロジェクト global の記入例（最小形）
+id: global
+name: グローバル（全体・基盤・雑務・単発タスク置き場）
+status: active
+workspace: null
+goals: []
+overview: >
+  特定プロジェクトに属さない作業の受け皿。判定に迷う新規チャットはここに仮置きし、
+  行き先が決まったら移す。監査などの機構タスクの受け皿でもある。
+rules_ref: []
+chats: []          # intake（F3）で登録していく
+schedules: []
+environments:
+  - env: <env-id>
+    routes: [shell]
+services: []       # global 自体は bind しない。各プロジェクトの bind が正
+staff:
+  assignee: null   # 機構は無名。global は null が正
+tasks:
+  - id: one-off
+    name: 単発タスク（行き先の決まらない雑務の仮置き）

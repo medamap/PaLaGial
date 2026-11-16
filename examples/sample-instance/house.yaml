@@ -1,0 +1,42 @@
+# 家の設定（ドライラン用サンプルインスタンス）
+# ※注意: パッケージ内には house.yaml の雛形・スキーマ定義が存在しないため、
+#   本ファイルの構造は install-prompt.md 手順1〜5と function-spec.md F8 の
+#   「出力：稼働系一式（レジストリ初版、家の設定、担当者プールの有効化）」から
+#   エージェント側で推定して組み立てたものである。
+house:
+  name: 山極印
+  reading: やまごくいん
+  owner_surname: 山田
+  synthesis:
+    # 合成の過程メモ（どのベース名＋どの字か）
+    method: "ベース家名の接尾部（suffix）を保ち、オーナー名字の代表1字を頭に付ける"
+    base_material:
+      name: 泰山極印
+      reading: たいざんごくいん
+      suffix: 極印
+      tone: 重厚
+      source: "data/house-names.yaml"
+    taken_character: 山        # オーナー名字「山田」の先頭1字を採用
+    preserved_suffix: 極印     # ベース名「泰山極印」の suffix をそのまま保持
+    result: 山極印（やまごくいん）
+    candidates_considered:
+      - { name: 山極印, from: "泰山極印（極印）＋山", note: "ベース名自体に「山」を含み出自が自然。採用" }
+      - { name: 山園寺, from: "藤園寺（園寺）＋山", note: "響きは良いが「やまえんじ」の読みがやや平板" }
+      - { name: 山集院, from: "真澄集院ほか（集院）＋山", note: "格式は高いが「極印」の商家的な重みを優先した" }
+    note: "合成アルゴリズムの明文ルールはパッケージ内に無く、上記 method はエージェントの推定による"
+  head:
+    agent_name: ルナ
+    display_name: 山極印ルナ   # 家名＋エージェント名。表示のみ（install-prompt 手順3）
+    note: "当主はシステムメッセージでは素の口調で語る"
+  staff_names:
+    jiiya: { persona_id: jiiya, name: 鷹司 重蔵, reading: たかつかさ じゅうぞう, note: "data/personas.yaml の jiiya エントリの名前をインストール時命名としてそのまま採用" }
+    baaya: { persona_id: baaya, name: 梅乃 つる, reading: うめの つる, note: "data/personas.yaml の baaya エントリの名前をインストール時命名としてそのまま採用" }
+    tobimaru: { persona_id: tobimaru, name: 飛丸, reading: とびまる, note: "名前不変（固定）" }
+  persona_resolution: 模糊     # 語尾のみ付く段階（install-prompt 手順4）
+  avatar:
+    preset_id: western-fantasy
+    preset_name: 西洋ファンタジー
+    preset_prompt: "使用人は、中世ヨーロッパの王宮を舞台にした王道ファンタジーのデザインで、男性は深青と銀、女性は白銀と淡い青紫を基調にし、ただし忍者（飛丸）は影の斥候らしい暗色の忍者装束とし、全体的に若く気品があり、髪は金髪、銀髪、栗色を散らし、瞳は青、緑、紫など宝石のような色合いにし、ヘアスタイルはよきにはからって"
+    props_file: avatar-props.yaml
+    note: "プロパティ先行・描画後行。インストール時点では属性だけを持ち、画像は描かない（F12）"
+  spec_version: spec_dryrun_001

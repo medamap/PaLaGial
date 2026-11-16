@@ -1,0 +1,10 @@
+# プロジェクトカタログ。パッケージ化されたプロジェクトの索引（生成物に近い扱い）。
+catalog:
+  - id: <project-slug>
+    name: ""
+    version: ""
+    package: "<relative-path-to-package>"
+    overview: ""
+    requires:
+      environments: []
+      services: []

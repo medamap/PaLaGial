@@ -1,0 +1,14 @@
+# 版メタ。このフォルダは一度有効化したら中身を編集しない（変更は新版フォルダで行う）。
+spec:
+  version: spec_<yyyymmdd_hhmmss>
+  name: ""
+  created: "<ISO8601>"
+  supersedes: null
+  created_by: ""
+  scope:
+    environments: true
+    services: true
+    projects: []
+  change_reason: ""
+  notes:
+    - "認証情報の値は一切含まない。サービスは ID と参照先の種別のみで表す"

@@ -1,0 +1,22 @@
+# プロジェクト定義（1件1ファイル: projects/<slug>.yaml）
+id: global
+name: "基盤・全体"
+status: active
+workspace: "dryrun-instance/"
+goals: []
+overview: >
+  AI優ギャル稼働系の基盤プロジェクト。レジストリ管理・監査などの機構まわりの受け皿と、
+  行き先の決まっていない作業の仮置き場（F3 intake：迷ったら global に仮置き）。
+rules_ref: []
+chats: []
+  # ドライランでは実在のチャットIDが無いため空とした。
+  # テンプレートは chats の必須性・最小件数を明記していない。
+schedules: []
+environments:
+  - env: agent-vm
+    routes: [shell]
+services: []
+staff:
+  assignee: null          # 機構は無名（境界ルール）。global のタスクに使用人は割り当てない
+tasks: []
+  # 初期状態では定常タスク未定義。テンプレートに global 向けの最小タスク例は無いため空とした。

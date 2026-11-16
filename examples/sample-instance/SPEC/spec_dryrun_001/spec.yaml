@@ -1,0 +1,15 @@
+# 版メタ。このフォルダは一度有効化したら中身を編集しない（変更は新版フォルダで行う）。
+spec:
+  version: spec_dryrun_001
+  name: "初版（ドライラン・サンプルインスタンス）"
+  created: "2026-11-14T00:00:00+09:00"
+  supersedes: null
+  created_by: "ルナ（インストールウィザード F8 による生成）"
+  scope:
+    environments: true
+    services: true
+    projects:
+      - global
+  change_reason: "初回インストールのため、templates/spec の雛形から初期レジストリを生成し初版として有効化"
+  notes:
+    - "認証情報の値は一切含まない。サービスは ID と参照先の種別のみで表す"

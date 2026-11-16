@@ -1,0 +1,7 @@
+# サービス台帳（グローバル1本）。認証情報の値は書かない（保管場所への参照だけ）。
+services:
+  - id: "<provider>::<persona>"   # 例: example-sns::house_persona
+    provider: ""
+    persona: ""
+    credential_ref: "<vault-or-connector-ref>"
+    note: ""

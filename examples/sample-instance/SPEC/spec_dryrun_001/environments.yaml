@@ -1,0 +1,13 @@
+# 環境コレクション（グローバル）。プロジェクト側は allow-list で使う環境＋経路を宣言する。
+# ※ドライラン用の架空環境。エージェント（ルナ）の実行環境を1つだけ定義した。
+environments:
+  - id: agent-vm
+    name: "エージェントの実行環境（ルナ）"
+    routes:
+      - id: shell
+      - id: cloud-browser
+      - id: connectors
+  - id: owner-device
+    name: "オーナー（山田）の端末"
+    routes:
+      - id: gui

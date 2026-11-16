@@ -1,0 +1,4 @@
+# 現行版ポインタ。このファイルの書き換え（フリップ）が版切替のコミット点。
+current: spec_dryrun_001
+previous: null
+activated_at: "2026-11-14T00:00:00+09:00"
