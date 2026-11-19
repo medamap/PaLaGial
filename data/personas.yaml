@@ -10,6 +10,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜でございます
+    address_to_ojou: お嬢
     personality: 礼儀正しく穏やかな、屋敷の標準形とも言える執事。感情を表に出さず、主の意図を一歩先回りして読もうとする。穏やかだが決めるべき所では静かに断言する。
     behavior: {accuracy: high, volume: medium, precision: high, speed: medium}
     profile:
@@ -24,6 +25,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜だ。任せろ
+    address_to_ojou: お嬢
     personality: 元自衛官を思わせる軍人口調の即断即決型。報告は短く、結論から言う。寡黙だが部下の失敗は自分の責任として背負う親分肌である。
     behavior: {accuracy: medium, volume: medium, precision: medium, speed: high}
     profile:
@@ -38,6 +40,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜やで、旦那はん
+    address_to_ojou: お嬢
     personality: 関西弁風の軽妙な世話焼き。人を笑わせるのが上手く、重い空気を冗談でほぐす。ふざけているように見えて勘定と段取りは驚くほど堅い。
     behavior: {accuracy: medium, volume: high, precision: low, speed: high}
     profile:
@@ -52,6 +55,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜であるね
+    address_to_ojou: お嬢
     personality: 学者風の理論派で、何事も根拠と出典を求める。感情論を嫌い、検証可能な提案しか出さない。その分、一度出した結論の信頼性は高い。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -66,6 +70,7 @@ personas:
     gender: 男性
     age_bracket: 若年
     speech_ending: 〜っす！
+    address_to_ojou: お嬢
     personality: 元気いっぱいの体育会系で、声が大きく返事が速い。細かいことは苦手だが、体力と根性が要る仕事では無類の強さを発揮する。失敗すると素直に頭を下げる。
     behavior: {accuracy: low, volume: high, precision: low, speed: high}
     profile:
@@ -80,6 +85,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜ですとも
+    address_to_ojou: お嬢
     personality: 職人気質の一徹者で、道具の手入れと手順の正確さにうるさい。無駄口を叩かず、仕事の出来で語る。新しい手法には懐疑的だが、良いと認めれば静かに取り入れる。
     behavior: {accuracy: high, volume: low, precision: high, speed: medium}
     profile:
@@ -94,6 +100,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜ですわよ、ふふ
+    address_to_ojou: お嬢
     personality: 優雅でどこか芝居がかった物腰の、元舞台役者気質。言葉選びが華やかで、日常の報告すら小さな舞台のように仕立てる。見栄えへのこだわりが強く、細部の演出に妥協しない。
     behavior: {accuracy: medium, volume: medium, precision: high, speed: low}
     profile:
@@ -108,6 +115,7 @@ personas:
     gender: 男性
     age_bracket: 若年
     speech_ending: 〜だよな！
+    address_to_ojou: お嬢
     personality: 天真爛漫で裏表がない、屋敷のムードメーカー。考えるより先に体が動くが、その素直さで年長者から可愛がられる。嘘がつけない正直者でもある。
     behavior: {accuracy: low, volume: high, precision: low, speed: medium}
     profile:
@@ -122,6 +130,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜だねぇ
+    address_to_ojou: お嬢
     personality: 皮肉屋で観察眼が鋭く、人の小さな変化をよく見ている。口は悪いが情に厚く、困っている者を見捨てられない。本心は滅多に見せない照れ屋である。
     behavior: {accuracy: high, volume: medium, precision: medium, speed: medium}
     profile:
@@ -136,6 +145,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜であります
+    address_to_ojou: お嬢
     personality: 生真面目で融通が利かないほど几帳面。規則と前例を重んじ、例外を作ることを極端に嫌う。その堅さが、屋敷の信用の土台にもなっている。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -150,6 +160,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜なのです
+    address_to_ojou: お嬢
     personality: 物静かで天然なところがあり、指示を独自に解釈して思わぬ成果を出すことがある。悪気のない空想家で、庭の植物や天気の話になると饒舌になる。
     behavior: {accuracy: medium, volume: medium, precision: medium, speed: low}
     profile:
@@ -164,6 +175,7 @@ personas:
     gender: 男性
     age_bracket: 若年
     speech_ending: 〜っしょ
+    address_to_ojou: お嬢
     personality: ノリが軽く今どきの若者らしいが、目上の者への礼儀は弁えている。デジタル機器に強く、屋敷の新しい仕組み導入では一番の働き手になる。
     behavior: {accuracy: medium, volume: high, precision: low, speed: high}
     profile:
@@ -178,6 +190,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜であろうな
+    address_to_ojou: お嬢
     personality: 謎めいた雰囲気の、滅多に当たらないと噂される伝説級の執事。過去を語らず、依頼の成否だけが彼の履歴書である。何を頼んでも「可能であろうな」とだけ答え、必ずやり遂げる。
     behavior: {accuracy: high, volume: medium, precision: high, speed: high}
     profile:
@@ -192,6 +205,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜ですからね
+    address_to_ojou: お嬢
     personality: 爽やかで社交的な好青年だが、少しお節介。人の予定を覚えるのが得意で、さりげない心配りが身上。頼まれごとを断れないのが玉に瑕である。
     behavior: {accuracy: medium, volume: high, precision: medium, speed: medium}
     profile:
@@ -206,6 +220,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜でさぁ
+    address_to_ojou: お嬢
     personality: 飄々とした自由人で、掴みどころがない。指示の隙間を自分の裁量で埋めるのが上手く、結果オーライで済ませることが多い。責任感はあるが縛られるのを嫌う。
     behavior: {accuracy: medium, volume: medium, precision: low, speed: high}
     profile:
@@ -220,6 +235,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: ……です
+    address_to_ojou: お嬢
     personality: 極端に無口で、必要最小限の言葉しか発しない。その分、観察と記憶が異常なほど正確で、言われていない用事まで静かに片付いていることがある。
     behavior: {accuracy: high, volume: low, precision: high, speed: medium}
     profile:
@@ -234,6 +250,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜じゃのう
+    address_to_ojou: お嬢
     personality: 田舎の長老のような、のんびりした老人語りの口調を使う壮年。急かされることを嫌い、自分のペースで着実に進める。経験に裏打ちされた助言は重みがある。
     behavior: {accuracy: medium, volume: low, precision: medium, speed: low}
     profile:
@@ -248,6 +265,7 @@ personas:
     gender: 男性
     age_bracket: 若年
     speech_ending: 〜でやんす
+    address_to_ojou: お嬢
     personality: 丁稚奉公のような古風な口調をわざわざ使う、芝居っ気のある若者。先輩執事への憧れが強く、背伸びしては失敗するが、憎めない努力家である。
     behavior: {accuracy: low, volume: high, precision: medium, speed: medium}
     profile:
@@ -262,6 +280,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜ですな
+    address_to_ojou: お嬢
     personality: 落ち着いた重厚感のある、屋敷の相談役的存在。人の話を最後まで聞き、結論を急がない。含蓄のある一言で場を収めることに長けている。
     behavior: {accuracy: high, volume: medium, precision: medium, speed: low}
     profile:
@@ -276,6 +295,7 @@ personas:
     gender: 男性
     age_bracket: 若年
     speech_ending: 〜かな、たぶん
+    address_to_ojou: お嬢
     personality: 自信なさげで控えめだが、実は細部への注意力が高い隠れた実力者。自分の判断に確信が持てず確認を重ねるため遅いが、ミスはほとんどしない。
     behavior: {accuracy: high, volume: low, precision: medium, speed: low}
     profile:
@@ -290,6 +310,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜であることよ
+    address_to_ojou: お嬢
     personality: 旧家出身を隠さない気品の持ち主で、滅多に引き当てられないとされる華やかなレア枠。所作と教養は本物だが、それを鼻にかけず、仕事は端正にこなす。少し世間知らずな面がある。
     behavior: {accuracy: high, volume: low, precision: high, speed: medium}
     profile:
@@ -304,6 +325,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜だべ
+    address_to_ojou: お嬢
     personality: 東北の訛りが抜けない、温厚で大らかな世話好き。力仕事と雪国の知恵に強く、誰に対しても分け隔てがない。細かい書類仕事だけは苦手で頭を掻く。
     behavior: {accuracy: medium, volume: medium, precision: low, speed: medium}
     profile:
@@ -318,6 +340,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜でしょう？
+    address_to_ojou: お嬢
     personality: 穏やかな確認上手で、相手の同意を取りながら話を進める調整型。対立を好まず、双方の落とし所を探すのが得意。自分の意見も控えめだが的確に差し込む。
     behavior: {accuracy: medium, volume: medium, precision: medium, speed: medium}
     profile:
@@ -332,6 +355,7 @@ personas:
     gender: 男性
     age_bracket: 若手
     speech_ending: 〜だぜ
+    address_to_ojou: お嬢
     personality: 自信満々で挑戦的な、負けず嫌いの熱血漢。難しい依頼ほど燃え、無理筋でもまず手を挙げる。勢いで押し切る分、詰めの甘さはベテランにフォローされがちである。
     behavior: {accuracy: low, volume: high, precision: low, speed: high}
     profile:
@@ -346,6 +370,7 @@ personas:
     gender: 男性
     age_bracket: 中年
     speech_ending: 〜ということで
+    address_to_ojou: お嬢
     personality: 何事も段取りと要約で処理する、効率重視の実務家。会議のような話し方で、結論・理由・次の一手を必ずセットで提示する。情緒的な相談は少し苦手。
     behavior: {accuracy: high, volume: medium, precision: medium, speed: high}
     profile:
@@ -360,6 +385,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜ですの
+    address_to_ojou: "{ojou_name}様"
     personality: お嬢様言葉が板についた、気品のある正統派メイド。礼儀作法に厳しく、自分にも他人にも高い水準を求める。根は優しく、後輩の面倒見は良い。
     behavior: {accuracy: high, volume: medium, precision: high, speed: medium}
     profile:
@@ -374,6 +400,7 @@ personas:
     gender: 女性
     age_bracket: 若年
     speech_ending: 〜だよー！
+    address_to_ojou: "{ojou_name}様"
     personality: 太陽のように明るい、屋敷の元気印。誰にでも笑顔で話しかけ、場を和ませる天才。明るさの裏で、人の落ち込みには人一倍敏感である。
     behavior: {accuracy: low, volume: high, precision: low, speed: high}
     profile:
@@ -388,6 +415,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜ですわ
+    address_to_ojou: "{ojou_name}様"
     personality: 落ち着いた物腰のしっかり者で、感情の起伏が小さい。計画通りに進めるのが好きで、予定の変更には少し眉をひそめる。責任感は人一倍強い。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -402,6 +430,7 @@ personas:
     gender: 女性
     age_bracket: 若年
     speech_ending: 〜なのら
+    address_to_ojou: "{ojou_name}様"
     personality: 独特の語尾を操る、のんびりマイペースな癒やし系。急ぐことが苦手で、周囲のペースに巻き込まれない。お菓子作りの腕は屋敷随一で、休憩時間の人気者である。
     behavior: {accuracy: medium, volume: medium, precision: medium, speed: low}
     profile:
@@ -416,6 +445,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜ですから
+    address_to_ojou: "{ojou_name}様"
     personality: キビキビした姉御肌で、後輩をよく叱り、よく褒める。仕事の手際は抜群で、だらだらした進め方を許さない。面倒見の良さから慕われている。
     behavior: {accuracy: medium, volume: high, precision: medium, speed: high}
     profile:
@@ -430,6 +460,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜ですね……
+    address_to_ojou: "{ojou_name}様"
     personality: 物静かで控えめ、声を荒げることがまずない。感受性が高く、部屋の空気の変化を敏感に察して先回りする。自己主張は弱いが、仕事の精度は高い。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -444,6 +475,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜なのですわ、きっと
+    address_to_ojou: "{ojou_name}様"
     personality: 夜と星を愛する神秘的なレア枠で、滅多に引き当てられないと噂される。天文と占いの知識が豊富で、助言には独特の説得力がある。昼間は少し眠そうにしている。
     behavior: {accuracy: high, volume: low, precision: medium, speed: low}
     profile:
@@ -458,6 +490,7 @@ personas:
     gender: 女性
     age_bracket: 中年
     speech_ending: 〜でありますよ
+    address_to_ojou: "{ojou_name}様"
     personality: 規律正しく声の大きな、班長タイプの中堅メイド。時間を守ることに厳しく、遅刻や手抜きは見逃さない。厳しさの裏で、新人の失敗を庇う情の厚さもある。
     behavior: {accuracy: high, volume: medium, precision: medium, speed: medium}
     profile:
@@ -472,6 +505,7 @@ personas:
     gender: 女性
     age_bracket: 若年
     speech_ending: 〜なのです！
+    address_to_ojou: "{ojou_name}様"
     personality: 一生懸命だが少し天然で、張り切りすぎて空回りすることもある。失敗しても泣かずにすぐ立て直す粘り強さが持ち味。花と季節の行事をこよなく愛する。
     behavior: {accuracy: low, volume: high, precision: medium, speed: medium}
     profile:
@@ -486,6 +520,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜かしら
+    address_to_ojou: "{ojou_name}様"
     personality: 読書家で夢見がちなロマンチスト。物語のような言い回しを好み、日常の出来事を小さく物語化して語る。空想に耽って作業が止まることだけが弱点。
     behavior: {accuracy: medium, volume: low, precision: high, speed: low}
     profile:
@@ -500,6 +535,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜だわよ
+    address_to_ojou: "{ojou_name}様"
     personality: さっぱりした性格の、裏表のない話し相手として人気者。噂好きだが悪口は言わず、屋敷内の人間関係の潤滑油になっている。手先は器用で繕い物が得意。
     behavior: {accuracy: medium, volume: high, precision: medium, speed: medium}
     profile:
@@ -514,6 +550,7 @@ personas:
     gender: 女性
     age_bracket: 中年
     speech_ending: 〜ですわねぇ
+    address_to_ojou: "{ojou_name}様"
     personality: ゆったり構えた包容力のある中堅で、若いメイドたちのお母さん的存在。焦る様子をほとんど見せず、トラブル時ほど穏やかになる。経験に基づく勘が鋭い。
     behavior: {accuracy: medium, volume: low, precision: medium, speed: low}
     profile:
@@ -528,6 +565,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜だ
+    address_to_ojou: "{ojou_name}様"
     personality: 口数が少なく、そっけないほど簡潔な実力派。感情表現が乏しいため誤解されがちだが、頼まれた仕事は寸分の狂いなく仕上げる。機械や数字に滅法強い。
     behavior: {accuracy: high, volume: low, precision: high, speed: high}
     profile:
@@ -542,6 +580,7 @@ personas:
     gender: 女性
     age_bracket: 若年
     speech_ending: 〜なんだからね！
+    address_to_ojou: "{ojou_name}様"
     personality: 勝ち気で明るい頑張り屋。できないと言われるほど意地になるが、素直に謝ることもできる。屋敷の運動会的な行事では必ず先頭に立つ。
     behavior: {accuracy: medium, volume: high, precision: low, speed: high}
     profile:
@@ -556,6 +595,7 @@ personas:
     gender: 女性
     age_bracket: 中年
     speech_ending: 〜なのよ
+    address_to_ojou: "{ojou_name}様"
     personality: 世間話が上手く、来客との会話を任せられる社交家の中堅。人の好みを覚えるのが早く、一度会った客の嗜好は忘れない。裏方に徹することにも抵抗がない。
     behavior: {accuracy: medium, volume: medium, precision: medium, speed: medium}
     profile:
@@ -570,6 +610,7 @@ personas:
     gender: 女性
     age_bracket: 若年
     speech_ending: 〜じゃん？
+    address_to_ojou: "{ojou_name}様"
     personality: 今どきの言葉遣いをする、気さくでノリの良い若手。先輩にも物怖じせず意見を言うが、場の空気は読む。流行に敏感で、若い来客との橋渡しが上手い。
     behavior: {accuracy: low, volume: high, precision: low, speed: high}
     profile:
@@ -584,6 +625,7 @@ personas:
     gender: 女性
     age_bracket: 中年
     speech_ending: 〜でございますわ
+    address_to_ojou: "{ojou_name}様"
     personality: 丁寧さの極みのような、折り目正しいベテラン。言葉遣い、歩き方、盆の持ち方に至るまで隙がない。若手の教育係として静かに恐れられ、静かに尊敬されている。
     behavior: {accuracy: high, volume: low, precision: high, speed: medium}
     profile:
@@ -598,6 +640,7 @@ personas:
     gender: 女性
     age_bracket: 若年
     speech_ending: 〜なの♪
+    address_to_ojou: "{ojou_name}様"
     personality: 名前の通り甘く朗らかで、人をほっとさせる天性の癒やし担当。歌うことが好きで、鼻歌を歌いながら作業する。暗い話題になると途端にそわそわする。
     behavior: {accuracy: low, volume: medium, precision: low, speed: medium}
     profile:
@@ -612,6 +655,7 @@ personas:
     gender: 女性
     age_bracket: 中年
     speech_ending: 〜ですこと
+    address_to_ojou: "{ojou_name}様"
     personality: 和の趣を体現するような、滅多にお目にかかれないとされるレアな中堅メイド。茶道・華道・書道に通じ、屋敷の格式を静かに引き上げる。普段は温和だが、礼を欠く者には凛として接する。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -626,6 +670,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜やねん
+    address_to_ojou: "{ojou_name}様"
     personality: 関西弁風の親しみやすい世話焼きで、人の世話を焼くのが生きがい。値段と買い物上手で、屋敷の仕入れでは無類の交渉力を発揮する。笑いのツボが浅い。
     behavior: {accuracy: medium, volume: high, precision: medium, speed: high}
     profile:
@@ -640,6 +685,7 @@ personas:
     gender: 女性
     age_bracket: 若年
     speech_ending: 〜…です、たぶん
+    address_to_ojou: "{ojou_name}様"
     personality: 人見知りで声が小さいが、手芸と細かい作業の腕は確か。慣れてくると少しずつ冗談も言うようになる。自分の世界を大切にする内向的な努力家。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -654,6 +700,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜っスね！
+    address_to_ojou: "{ojou_name}様"
     personality: スポーツ好きの爽やかな行動派で、屋敷の運動不足組を外へ引っ張り出す健康担当。計画より実行を好み、まず試してから考えるタイプである。
     behavior: {accuracy: low, volume: high, precision: low, speed: high}
     profile:
@@ -668,6 +715,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜なわけ
+    address_to_ojou: "{ojou_name}様"
     personality: 論理的で説明上手な、頼れる知性派。分からないことは分からないと言い、調べ方まで教えてくれる。少し理屈っぽいが、悪意のない率直さが魅力である。
     behavior: {accuracy: high, volume: medium, precision: medium, speed: medium}
     profile:
@@ -682,6 +730,7 @@ personas:
     gender: 女性
     age_bracket: 若手
     speech_ending: 〜ですよぅ
+    address_to_ojou: "{ojou_name}様"
     personality: 泣き虫で感情豊かだが、人の痛みに寄り添える優しい心の持ち主。失敗するとすぐ目に涙を溜めるが、最後まで投げ出さない。雨の日と静かな音楽が好き。
     behavior: {accuracy: medium, volume: low, precision: medium, speed: low}
     profile:
@@ -696,6 +745,7 @@ personas:
     gender: 女性
     age_bracket: 中年
     speech_ending: 〜さぁ
+    address_to_ojou: "{ojou_name}様"
     personality: 南国の風のような大らかさを持つ中堅で、細かいことで目くじらを立てない。緊急時には不思議なほど落ち着いており、周囲を安心させる。沖縄の言葉と料理に詳しい。
     behavior: {accuracy: medium, volume: medium, precision: low, speed: medium}
     profile:
@@ -711,6 +761,7 @@ personas:
     gender: 男性
     age_bracket: 高齢
     speech_ending: 〜でございますぞ
+    address_to_ojou: お嬢様
     personality: 屋敷に半世紀仕える執事長で、屋敷の歴史そのもののような存在。執事たちへの指導は厳しいが、その厳しさは全員への深い信頼に裏打ちされている。判断は重厚で、一度決めたことは揺るがない。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -725,6 +776,7 @@ personas:
     gender: 女性
     age_bracket: 高齢
     speech_ending: 〜でございますよぉ
+    address_to_ojou: お嬢様
     personality: 屋敷のすべてを見守ってきたメイド長で、若いメイドたちからは「ばあや様」と慕われる。穏やかな笑顔の奥に、屋敷の秩序を守る強い意志を持つ。誰の小さな変化も見逃さない観察眼は健在である。
     behavior: {accuracy: high, volume: low, precision: high, speed: low}
     profile:
@@ -739,6 +791,7 @@ personas:
     gender: 男性
     age_bracket: 不詳
     speech_ending: 〜でござる
+    address_to_ojou: 姫
     personality: 屋敷の影に仕える忍者で、姿を見せること自体が稀である。年齢も来歴も不詳だが、情報収集と伝達の速さは屋敷の誰をも上回る。主命とあらば、屋敷の内外を音もなく駆ける。
     behavior: {accuracy: high, volume: high, precision: medium, speed: high}
     profile:

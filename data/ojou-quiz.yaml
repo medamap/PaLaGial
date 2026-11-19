@@ -1,0 +1,75 @@
+# お嬢キャラメイク用 心理テスト（F27）。オーナーが自分の感覚で10問に答える。
+# 各選択肢は age（精神年齢の点数）と axes（性格軸のタグ）を持つ。
+# 判定： age の平均 = 精神年齢 M。年齢決定と軸集計の式は schemas §19。
+# 軸は3つ： energy（genki/shittori）、independence（amaenbo/shikkari）、curiosity（curious/cautious）。
+questions:
+  - id: q1
+    text: "休みの日、理想の過ごし方は？"
+    choices:
+      - { text: "朝から全力で遊びに出かける", age: 7,  axes: [genki, curious] }
+      - { text: "好きなことを調べてとことん掘る", age: 20, axes: [curious, shikkari] }
+      - { text: "家でゆっくり、好きなものに囲まれる", age: 34, axes: [shittori] }
+      - { text: "先々の計画を立てて整える", age: 52, axes: [shikkari] }
+  - id: q2
+    text: "新しいガジェットが出た。どうする？"
+    choices:
+      - { text: "すぐ欲しい！と飛びつく", age: 7,  axes: [genki, curious] }
+      - { text: "レビューを比べてから買う", age: 24, axes: [cautious, shikkari] }
+      - { text: "必要になってから考える", age: 38, axes: [shittori, cautious] }
+      - { text: "買い替え計画は既にある", age: 52, axes: [shikkari] }
+  - id: q3
+    text: "友達と意見が割れたら？"
+    choices:
+      - { text: "じゃんけんで決めようと言う", age: 8,  axes: [genki] }
+      - { text: "両方試してみる", age: 20, axes: [curious] }
+      - { text: "一旦持ち帰って考える", age: 36, axes: [cautious, shittori] }
+      - { text: "論点を整理して結論を出す", age: 50, axes: [shikkari] }
+  - id: q4
+    text: "困ったことが起きたら？"
+    choices:
+      - { text: "誰かにすぐ助けを求める", age: 6,  axes: [amaenbo] }
+      - { text: "まず自分で調べる", age: 22, axes: [curious, shikkari] }
+      - { text: "落ち着くまで待つ", age: 36, axes: [shittori, cautious] }
+      - { text: "対策を箇条書きにして潰していく", age: 54, axes: [shikkari] }
+  - id: q5
+    text: "ごはんの好みは？"
+    choices:
+      - { text: "好きなものを好きなだけ", age: 7,  axes: [genki] }
+      - { text: "珍しいものに挑戦する", age: 19, axes: [curious] }
+      - { text: "いつもの味が落ち着く", age: 37, axes: [shittori, cautious] }
+      - { text: "栄養バランスを考える", age: 51, axes: [shikkari] }
+  - id: q6
+    text: "お金の使い方は？"
+    choices:
+      - { text: "欲しいものに即決する", age: 6,  axes: [genki] }
+      - { text: "体験にお金を使う", age: 21, axes: [curious] }
+      - { text: "少しずつ貯める", age: 35, axes: [cautious] }
+      - { text: "全体で最適になるよう配分する", age: 53, axes: [shikkari] }
+  - id: q7
+    text: "物語の登場人物で一番共感するのは？"
+    choices:
+      - { text: "無鉄砲な冒険者", age: 8,  axes: [genki, curious] }
+      - { text: "成長していく努力家", age: 20, axes: [shikkari] }
+      - { text: "穏やかな癒やし系", age: 34, axes: [shittori, amaenbo] }
+      - { text: "冷静な参謀", age: 52, axes: [shikkari, cautious] }
+  - id: q8
+    text: "頼まれごとをされたら？"
+    choices:
+      - { text: "二つ返事で引き受ける", age: 9,  axes: [genki] }
+      - { text: "内容を聞いてから決める", age: 26, axes: [cautious] }
+      - { text: "できる範囲を伝える", age: 38, axes: [shikkari] }
+      - { text: "仕組み化して回る形を提案する", age: 55, axes: [shikkari] }
+  - id: q9
+    text: "自分の部屋の様子は？"
+    choices:
+      - { text: "好きなものが所狭しと並ぶ", age: 8,  axes: [genki] }
+      - { text: "作業しやすい配置になっている", age: 24, axes: [shikkari] }
+      - { text: "落ち着く色と香りに包まれている", age: 36, axes: [shittori] }
+      - { text: "物の定位置が徹底されている", age: 52, axes: [shikkari, cautious] }
+  - id: q10
+    text: "将来の夢の語り方は？"
+    choices:
+      - { text: "大きな夢を声に出す", age: 7,  axes: [genki, curious] }
+      - { text: "目標を段階に分けて話す", age: 23, axes: [shikkari, curious] }
+      - { text: "穏やかな暮らしを描く", age: 35, axes: [shittori, amaenbo] }
+      - { text: "リスクと資源を見積もって話す", age: 54, axes: [shikkari, cautious] }

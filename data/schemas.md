@@ -284,3 +284,23 @@ browser_pool:
 ```
 
 - どちらのプールも「識別子は運用状態に保持し、ランをまたいで引き継ぐ」ことが要であり、保存場所の細部はインスタンスの流儀に従う。
+
+## 19. お嬢ペルソナとキャラメイク（F27）
+
+- house.yaml の `ojou` 節の形式：
+
+```yaml
+ojou:
+  name: "<名前>"                 # キャラメイクで決定。名字は家名
+  full_name: "<家名＋名前>"
+  age: 11                        # 自動決定（下記の式）。オーナーの微調整可
+  personality: "<軸集計から生成したプロフィール文>"
+  quiz:
+    mental_age: 30               # 回答 age 点の平均 M
+    decided_at: "<日時>"
+```
+
+- 年齢マッピング（lerp）： M が 50 以上なら一律 18。M が 5 未満なら 5。それ以外は `5 + (M - 5) × (10 / 45)` を四捨五入する（M の定義域 5〜50 を、お嬢の年齢 5〜15 へ線形写像）。計算例： M=20 → 8歳、M=30 → 11歳、M=45 → 14歳、M=49 → 15歳、M=50 → 18歳（特則）。
+- 性格の軸： energy（genki/shittori）、independence（amaenbo/shikkari）、curiosity（curious/cautious）の3軸。回答の axes タグを集計し、各軸で優勢な極と全体の傾向から 2〜3 文のプロフィールにする。
+- `address_to_ojou` の `{ojou_name}` は、お嬢の name へ置換して使う。
+- デフォルトプロジェクトの project yaml では、担当を `staff.assignee` ではなくお嬢を指す形で記録する（例： `persona: ojou`）。使用人のランダム割り当ての対象外である。

@@ -20,7 +20,13 @@ house:
     baaya:    { persona_id: baaya, given_name: "<インストール時に命名>", full_name: "<家名＋名前>" }
     tobimaru: { persona_id: tobimaru, name: "飛丸" }   # 名前不変・姓名の概念なし
   persona_resolution: 零      # 零 / 模糊 / 須臾 / 虚空（阿摩羅は選択不可）
+  ojou:                       # お嬢ペルソナ（F27）。インストール直後のキャラメイクで決定し、ここへ保存する
+    name: "<名前>"             # 名字は家名
+    full_name: "<家名＋名前>"
+    age: null                 # 心理テストの精神年齢 M から lerp で自動決定（schemas §19）
+    personality: "<軸集計から生成したプロフィール文>"
+    quiz: { mental_age: null, decided_at: null }
   avatar:
     preset_id: null           # data/avatar-presets.yaml から選択。未選択なら null
     props: null               # 属性プロパティの置き場（描画は後行）
-  note: "ユーザーはギャルではない。ギャル（跡取り娘）はユーザー側の操作プレイヤーで、チャットに登場しない。"
+  note: "ユーザーはギャルではない。ギャル（お嬢／跡取り娘）は家の登場人物であり、デフォルトプロジェクトのペルソナとして登場するが、オーナー本人ではない。"
