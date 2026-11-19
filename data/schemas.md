@@ -269,3 +269,18 @@ projects[].chats はプロジェクト⇄チャットの対応表示（GUI の�
 監査（ドクターの将来項目）：
 
 - 未タグの人物、map.yaml に無い人物ファイル、front matter と map.yaml の tags 不一致、cached_at が正本 updated より古いキャッシュを info として検出する。
+
+## 18. ブラウザプールの記録形式（F26）
+
+- プロジェクトプール： そのプロジェクトの運用状態（ops state）の中に1節を持ち、少なくとも次を記録する： task_id（未登録ならその旨）、起動日時、最終利用。
+- コモンプール： 家の実行時状態に1本持つ。形式の例：
+
+```yaml
+browser_pool:
+  common:
+    task_id: null        # 未登録なら null
+    created_at: null
+    last_used_at: null
+```
+
+- どちらのプールも「識別子は運用状態に保持し、ランをまたいで引き継ぐ」ことが要であり、保存場所の細部はインスタンスの流儀に従う。
