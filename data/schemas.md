@@ -296,11 +296,17 @@ ojou:
   age: 11                        # 自動決定（下記の式）。オーナーの微調整可
   personality: "<軸集計から生成したプロフィール文>"
   quiz:
-    mental_age: 30               # 回答 age 点の平均 M
+    mental_age: 30               # 正規化から復元した精神年齢 M
+    params: { good_evil: 0.88, energy: 0.64, independence: 0.45, curiosity: 0.75 }  # 正規化パラメータ
     decided_at: "<日時>"
 ```
 
-- 年齢マッピング（lerp）： M が 50 以上なら一律 18。M が 5 未満なら 5。それ以外は `5 + (M - 5) × (10 / 45)` を四捨五入する（M の定義域 5〜50 を、お嬢の年齢 5〜15 へ線形写像）。計算例： M=20 → 8歳、M=30 → 11歳、M=45 → 14歳、M=49 → 15歳、M=50 → 18歳（特則）。
-- 性格の軸： energy（genki/shittori）、independence（amaenbo/shikkari）、curiosity（curious/cautious）の3軸。回答の axes タグを集計し、各軸で優勢な極と全体の傾向から 2〜3 文のプロフィールにする。
+- パラメータと正規化： パラメータは mental_age（精神年齢）／good_evil（善悪）／energy（元気↔しっとり）／independence（甘えん坊↔しっかり者）／curiosity（好奇心↔慎重）。各質問の各選択肢は、任意のパラメータへの delta を持つ。抽出された10問のセットについて、パラメータ p 毎に次を計算する：
+  - `min_p` = 10問それぞれの「p への delta の最小値（delta が無い選択肢は 0）」の合計。**負になり得る**。
+  - `max_p` = 同じく最大値の合計。
+  - `actual_p` = オーナーが選んだ選択肢の delta の合計。
+  - 正規化値 `norm_p = (actual_p - min_p) / (max_p - min_p)`（∈ [0,1]）。これは各 delta に係数 `1 / (max_p - min_p)` を掛けて振れ幅を 1 にそろえるのと等価。`max_p = min_p`（振れ幅ゼロ）の場合は 0.5（中立）とする。
+- 年齢マッピング（lerp）： 精神年齢 M は `M = 5 + 45 × norm_mental_age` で復元する。M が 50 以上（norm = 1 のとき）なら一律 18。M が 5 未満なら 5。それ以外は `5 + (M - 5) × (10 / 45)` を四捨五入する（M の定義域 5〜50 を、お嬢の年齢 5〜15 へ線形写像）。計算例： M=20 → 8歳、M=30 → 11歳、M=45 → 14歳、M=49 → 15歳、M=50 → 18歳（特則）。
+- 性格： 正規化パラメータ（good_evil／energy／independence／curiosity）の値の傾向から、2〜3 文のプロフィールにする。
 - `address_to_ojou` の `{ojou_name}` は、お嬢の name へ置換して使う。
 - デフォルトプロジェクトの project yaml では、担当を `staff.assignee` ではなくお嬢を指す形で記録する（例： `persona: ojou`）。使用人のランダム割り当ての対象外である。

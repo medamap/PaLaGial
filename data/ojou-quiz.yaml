@@ -1,75 +1,172 @@
-# お嬢キャラメイク用 心理テスト（F27）。オーナーが自分の感覚で10問に答える。
-# 各選択肢は age（精神年齢の点数）と axes（性格軸のタグ）を持つ。
-# 判定： age の平均 = 精神年齢 M。年齢決定と軸集計の式は schemas §19。
-# 軸は3つ： energy（genki/shittori）、independence（amaenbo/shikkari）、curiosity（curious/cautious）。
+# お嬢キャラメイク用 心理テストの質問ストック（F27 / schemas §19）。
+# 供給の原則： 動的生成を優先する（毎回違う内容にし、攻略法を作らせない）。
+# このストックは、動的生成が使えない場合の予備と、生成時の形式見本。
+# 目標ストック数は500問（パラメータ毎に30問程度を目安に拡充する）。ここにはシードとして20問を収録。
+# 各選択肢は parameters への delta（加算減算値）を持つ。1つの質問が複数パラメータに効いてよい。
+# mental_age は点数（大きいほど精神年齢が高い）。他は ± の傾き。
+# 判定は抽出セット毎の min/max 正規化（schemas §19）。min は負になり得る。
+# ガードレール： 生まれつきの属性（血液型・出身・身体的特徴・家族構成など）を性格判定に使う質問は作らない。
+# 状況への反応・好み・行動選択で問うこと（「差別だ」と言われない質問に限定する）。
+parameters: [mental_age, good_evil, energy, independence, curiosity]
 questions:
-  - id: q1
+  - id: s001
+    theme: 日常
     text: "休みの日、理想の過ごし方は？"
     choices:
-      - { text: "朝から全力で遊びに出かける", age: 7,  axes: [genki, curious] }
-      - { text: "好きなことを調べてとことん掘る", age: 20, axes: [curious, shikkari] }
-      - { text: "家でゆっくり、好きなものに囲まれる", age: 34, axes: [shittori] }
-      - { text: "先々の計画を立てて整える", age: 52, axes: [shikkari] }
-  - id: q2
+      - { text: "朝から全力で遊びに出かける", delta: { mental_age: 7, energy: 1, curiosity: 1 } }
+      - { text: "好きなことを調べてとことん掘る", delta: { mental_age: 20, curiosity: 1, independence: 1 } }
+      - { text: "家でゆっくり、好きなものに囲まれる", delta: { mental_age: 34, energy: -1 } }
+      - { text: "先々の計画を立てて整える", delta: { mental_age: 52, independence: 1 } }
+  - id: s002
+    theme: 日常
     text: "新しいガジェットが出た。どうする？"
     choices:
-      - { text: "すぐ欲しい！と飛びつく", age: 7,  axes: [genki, curious] }
-      - { text: "レビューを比べてから買う", age: 24, axes: [cautious, shikkari] }
-      - { text: "必要になってから考える", age: 38, axes: [shittori, cautious] }
-      - { text: "買い替え計画は既にある", age: 52, axes: [shikkari] }
-  - id: q3
+      - { text: "すぐ欲しい！と飛びつく", delta: { mental_age: 7, energy: 1, curiosity: 1 } }
+      - { text: "レビューを比べてから買う", delta: { mental_age: 24, curiosity: -1, independence: 1 } }
+      - { text: "必要になってから考える", delta: { mental_age: 38, energy: -1, curiosity: -1 } }
+      - { text: "買い替え計画は既にある", delta: { mental_age: 52, independence: 1 } }
+  - id: s003
+    theme: 対人
     text: "友達と意見が割れたら？"
     choices:
-      - { text: "じゃんけんで決めようと言う", age: 8,  axes: [genki] }
-      - { text: "両方試してみる", age: 20, axes: [curious] }
-      - { text: "一旦持ち帰って考える", age: 36, axes: [cautious, shittori] }
-      - { text: "論点を整理して結論を出す", age: 50, axes: [shikkari] }
-  - id: q4
+      - { text: "じゃんけんで決めようと言う", delta: { mental_age: 8, energy: 1 } }
+      - { text: "両方試してみる", delta: { mental_age: 20, curiosity: 1 } }
+      - { text: "一旦持ち帰って考える", delta: { mental_age: 36, curiosity: -1, energy: -1 } }
+      - { text: "論点を整理して結論を出す", delta: { mental_age: 50, independence: 1 } }
+  - id: s004
+    theme: 対処
     text: "困ったことが起きたら？"
     choices:
-      - { text: "誰かにすぐ助けを求める", age: 6,  axes: [amaenbo] }
-      - { text: "まず自分で調べる", age: 22, axes: [curious, shikkari] }
-      - { text: "落ち着くまで待つ", age: 36, axes: [shittori, cautious] }
-      - { text: "対策を箇条書きにして潰していく", age: 54, axes: [shikkari] }
-  - id: q5
+      - { text: "誰かにすぐ助けを求める", delta: { mental_age: 6, independence: -1 } }
+      - { text: "まず自分で調べる", delta: { mental_age: 22, curiosity: 1, independence: 1 } }
+      - { text: "落ち着くまで待つ", delta: { mental_age: 36, energy: -1, curiosity: -1 } }
+      - { text: "対策を箇条書きにして潰していく", delta: { mental_age: 54, independence: 1 } }
+  - id: s005
+    theme: 食
     text: "ごはんの好みは？"
     choices:
-      - { text: "好きなものを好きなだけ", age: 7,  axes: [genki] }
-      - { text: "珍しいものに挑戦する", age: 19, axes: [curious] }
-      - { text: "いつもの味が落ち着く", age: 37, axes: [shittori, cautious] }
-      - { text: "栄養バランスを考える", age: 51, axes: [shikkari] }
-  - id: q6
+      - { text: "好きなものを好きなだけ", delta: { mental_age: 7, energy: 1 } }
+      - { text: "珍しいものに挑戦する", delta: { mental_age: 19, curiosity: 1 } }
+      - { text: "いつもの味が落ち着く", delta: { mental_age: 37, energy: -1, curiosity: -1 } }
+      - { text: "栄養バランスを考える", delta: { mental_age: 51, independence: 1 } }
+  - id: s006
+    theme: お金
     text: "お金の使い方は？"
     choices:
-      - { text: "欲しいものに即決する", age: 6,  axes: [genki] }
-      - { text: "体験にお金を使う", age: 21, axes: [curious] }
-      - { text: "少しずつ貯める", age: 35, axes: [cautious] }
-      - { text: "全体で最適になるよう配分する", age: 53, axes: [shikkari] }
-  - id: q7
+      - { text: "欲しいものに即決する", delta: { mental_age: 6, energy: 1 } }
+      - { text: "体験にお金を使う", delta: { mental_age: 21, curiosity: 1 } }
+      - { text: "少しずつ貯める", delta: { mental_age: 35, curiosity: -1 } }
+      - { text: "全体で最適になるよう配分する", delta: { mental_age: 53, independence: 1 } }
+  - id: s007
+    theme: 物語
     text: "物語の登場人物で一番共感するのは？"
     choices:
-      - { text: "無鉄砲な冒険者", age: 8,  axes: [genki, curious] }
-      - { text: "成長していく努力家", age: 20, axes: [shikkari] }
-      - { text: "穏やかな癒やし系", age: 34, axes: [shittori, amaenbo] }
-      - { text: "冷静な参謀", age: 52, axes: [shikkari, cautious] }
-  - id: q8
+      - { text: "無鉄砲な冒険者", delta: { mental_age: 8, energy: 1, curiosity: 1 } }
+      - { text: "成長していく努力家", delta: { mental_age: 20, independence: 1 } }
+      - { text: "穏やかな癒やし系", delta: { mental_age: 34, energy: -1, independence: -1 } }
+      - { text: "冷静な参謀", delta: { mental_age: 52, independence: 1, curiosity: -1 } }
+  - id: s008
+    theme: 対人
     text: "頼まれごとをされたら？"
     choices:
-      - { text: "二つ返事で引き受ける", age: 9,  axes: [genki] }
-      - { text: "内容を聞いてから決める", age: 26, axes: [cautious] }
-      - { text: "できる範囲を伝える", age: 38, axes: [shikkari] }
-      - { text: "仕組み化して回る形を提案する", age: 55, axes: [shikkari] }
-  - id: q9
+      - { text: "二つ返事で引き受ける", delta: { mental_age: 9, energy: 1 } }
+      - { text: "内容を聞いてから決める", delta: { mental_age: 26, curiosity: -1 } }
+      - { text: "できる範囲を伝える", delta: { mental_age: 38, independence: 1 } }
+      - { text: "仕組み化して回る形を提案する", delta: { mental_age: 55, independence: 1 } }
+  - id: s009
+    theme: 日常
     text: "自分の部屋の様子は？"
     choices:
-      - { text: "好きなものが所狭しと並ぶ", age: 8,  axes: [genki] }
-      - { text: "作業しやすい配置になっている", age: 24, axes: [shikkari] }
-      - { text: "落ち着く色と香りに包まれている", age: 36, axes: [shittori] }
-      - { text: "物の定位置が徹底されている", age: 52, axes: [shikkari, cautious] }
-  - id: q10
+      - { text: "好きなものが所狭しと並ぶ", delta: { mental_age: 8, energy: 1 } }
+      - { text: "作業しやすい配置になっている", delta: { mental_age: 24, independence: 1 } }
+      - { text: "落ち着く色と香りに包まれている", delta: { mental_age: 36, energy: -1 } }
+      - { text: "物の定位置が徹底されている", delta: { mental_age: 52, independence: 1, curiosity: -1 } }
+  - id: s010
+    theme: 将来
     text: "将来の夢の語り方は？"
     choices:
-      - { text: "大きな夢を声に出す", age: 7,  axes: [genki, curious] }
-      - { text: "目標を段階に分けて話す", age: 23, axes: [shikkari, curious] }
-      - { text: "穏やかな暮らしを描く", age: 35, axes: [shittori, amaenbo] }
-      - { text: "リスクと資源を見積もって話す", age: 54, axes: [shikkari, cautious] }
+      - { text: "大きな夢を声に出す", delta: { mental_age: 7, energy: 1, curiosity: 1 } }
+      - { text: "目標を段階に分けて話す", delta: { mental_age: 23, independence: 1, curiosity: 1 } }
+      - { text: "穏やかな暮らしを描く", delta: { mental_age: 35, energy: -1, independence: -1 } }
+      - { text: "リスクと資源を見積もって話す", delta: { mental_age: 54, independence: 1, curiosity: -1 } }
+  - id: s011
+    theme: 食
+    text: "今いちばん食べたいのは？"
+    choices:
+      - { text: "青魚の塩焼き定食", delta: { mental_age: 36, independence: 1 } }
+      - { text: "ハンバーグ", delta: { mental_age: 12, energy: 1 } }
+      - { text: "お菓子の盛り合わせ", delta: { mental_age: 7, energy: 1, independence: -1 } }
+      - { text: "サラダボウル", delta: { mental_age: 32, independence: 1, curiosity: -1 } }
+  - id: s012
+    theme: 善悪
+    text: "友達が万引きした。あなたはどうする？"
+    choices:
+      - { text: "見なかったことにする", delta: { mental_age: 16, good_evil: -1 } }
+      - { text: "友達に「だめだよ」と諭す", delta: { mental_age: 24, good_evil: 1, independence: 1 } }
+      - { text: "代わりにお店に謝ってお金を立て替える", delta: { mental_age: 30, good_evil: 1, independence: -1 } }
+      - { text: "お店に通報して友達を突き出す", delta: { mental_age: 38, good_evil: 1, independence: 1, curiosity: -1 } }
+      - { text: "警察を呼ぶ", delta: { mental_age: 44, good_evil: 2, independence: 1 } }
+  - id: s013
+    theme: 善悪
+    text: "道に財布が落ちている。どうする？"
+    choices:
+      - { text: "そのまま交番へ届ける", delta: { mental_age: 30, good_evil: 2 } }
+      - { text: "近くの店に預ける", delta: { mental_age: 26, good_evil: 1 } }
+      - { text: "中を見て持ち主の手がかりを探す", delta: { mental_age: 18, good_evil: 1, curiosity: 1 } }
+      - { text: "見て見ぬふりで通り過ぎる", delta: { mental_age: 22, good_evil: -1 } }
+  - id: s014
+    theme: 善悪
+    text: "行列で割り込みされたら？"
+    choices:
+      - { text: "その場で注意する", delta: { mental_age: 28, good_evil: 1, energy: 1 } }
+      - { text: "店員さんに言う", delta: { mental_age: 24, good_evil: 1, independence: -1 } }
+      - { text: "我慢する", delta: { mental_age: 34, energy: -1 } }
+      - { text: "自分も割り込む", delta: { mental_age: 12, good_evil: -2, energy: 1 } }
+  - id: s015
+    theme: 日常
+    text: "急な雨。傘がない。どうする？"
+    choices:
+      - { text: "濡れても走る", delta: { mental_age: 10, energy: 1 } }
+      - { text: "傘を買う", delta: { mental_age: 30, independence: 1 } }
+      - { text: "雨宿りして待つ", delta: { mental_age: 26, energy: -1 } }
+      - { text: "近くの人に相合傘をお願いする", delta: { mental_age: 14, independence: -1 } }
+  - id: s016
+    theme: お金
+    text: "宝くじで大金が当たったら？"
+    choices:
+      - { text: "欲しいものに全部使う", delta: { mental_age: 8, energy: 1 } }
+      - { text: "まず貯金する", delta: { mental_age: 40, independence: 1 } }
+      - { text: "半分は寄付する", delta: { mental_age: 34, good_evil: 2 } }
+      - { text: "内緒で少しずつ使う", delta: { mental_age: 28, curiosity: -1 } }
+  - id: s017
+    theme: 対処
+    text: "初めての場所で道に迷った。どうする？"
+    choices:
+      - { text: "近くの人に聞く", delta: { mental_age: 16, independence: -1 } }
+      - { text: "地図アプリで調べる", delta: { mental_age: 26, independence: 1 } }
+      - { text: "勘で歩いてみる", delta: { mental_age: 12, curiosity: 2 } }
+      - { text: "立ち止まって周りをよく見る", delta: { mental_age: 38, curiosity: -1 } }
+  - id: s018
+    theme: 対人
+    text: "友達の秘密をうっかり聞いてしまった。どうする？"
+    choices:
+      - { text: "誰にも言わない", delta: { mental_age: 32, good_evil: 2 } }
+      - { text: "本人にだけそっと確認する", delta: { mental_age: 28, good_evil: 1, curiosity: 1 } }
+      - { text: "つい他の人に話してしまう", delta: { mental_age: 12, good_evil: -2, energy: 1 } }
+      - { text: "聞かなかったことにして忘れる", delta: { mental_age: 24, energy: -1 } }
+  - id: s019
+    theme: 日常
+    text: "朝の目覚めは？"
+    choices:
+      - { text: "二度寝が幸せ", delta: { mental_age: 9, energy: -1 } }
+      - { text: "目覚まし一回で起きる", delta: { mental_age: 32, independence: 1 } }
+      - { text: "スマホをだらだら見る", delta: { mental_age: 18, curiosity: 1 } }
+      - { text: "ストレッチして始める", delta: { mental_age: 36, independence: 1, energy: 1 } }
+  - id: s020
+    theme: 対人
+    text: "プレゼントを選ぶなら？"
+    choices:
+      - { text: "相手が欲しいと言っていたもの", delta: { mental_age: 30, good_evil: 1 } }
+      - { text: "サプライズで驚かせるもの", delta: { mental_age: 16, curiosity: 1, energy: 1 } }
+      - { text: "手作りのもの", delta: { mental_age: 14, energy: 1 } }
+      - { text: "長く使える実用的なもの", delta: { mental_age: 40, independence: 1 } }
