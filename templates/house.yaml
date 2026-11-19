@@ -26,6 +26,16 @@ house:
     age: null                 # 心理テストの精神年齢 M から lerp で自動決定（schemas §19）
     personality: "<軸集計から生成したプロフィール文>"
     quiz: { mental_age: null, decided_at: null }
+    appearance:               # お嬢の外見（F28 / schemas §20）
+      blood_type: null        # プロフィール属性。性格判定には使わない
+      skin_color: null
+      eye_color: null
+      hair_color: { natural: null, dyed: null }
+      outfit_taste: null      # アバタープリセットの世界観の中での服装
+      accessory_taste: null
+      height_cm: null
+      weight_kg: null
+      neutral_face: null      # 勝ち気/穏やか/寡黙/不敵な笑い/微笑/無表情
   avatar:
     preset_id: null           # data/avatar-presets.yaml から選択。未選択なら null
     props: null               # 属性プロパティの置き場（描画は後行）

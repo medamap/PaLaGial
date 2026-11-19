@@ -310,3 +310,41 @@ ojou:
 - 性格： 正規化パラメータ（good_evil／energy／independence／curiosity）の値の傾向から、2〜3 文のプロフィールにする。
 - `address_to_ojou` の `{ojou_name}` は、お嬢の name へ置換して使う。
 - デフォルトプロジェクトの project yaml では、担当を `staff.assignee` ではなくお嬢を指す形で記録する（例： `persona: ojou`）。使用人のランダム割り当ての対象外である。
+
+## 20. お嬢の外見と関係台帳（F28）
+
+- house.yaml の `ojou.appearance` の形式：
+
+```yaml
+appearance:
+  blood_type: "A"                # プロフィール属性。性格判定には使わない
+  skin_color: "<肌の色>"
+  eye_color: "<目の色>"
+  hair_color: { natural: "<地毛の色>", dyed: "<染めている色。染めていなければ null>" }
+  outfit_taste: "<服の好み（アバタープリセットの世界観の中での服装）>"
+  accessory_taste: "<アクセサリーの好み>"
+  height_cm: 146
+  weight_kg: 37
+  neutral_face: "穏やか"          # 勝ち気/穏やか/寡黙/不敵な笑い/微笑/無表情
+```
+
+- 身長： 年齢別の標準身長（女子平均の目安： 5歳109／8歳128／10歳140／12歳147／14歳156／16歳158／18歳158 cm）を基準に、プロフィールの体格傾向で ±5cm の範囲で補正する。体重： 身長と年齢から標準的な値に合わせる（目安： 12歳147cm → 38kg 前後）。
+- ニュートラル顔の対応（正規化パラメータから、上から順に判定）：
+  1. good_evil < 0.33 → 不敵な笑い
+  2. energy ≥ 0.66 → 勝ち気
+  3. energy < 0.40 かつ good_evil ≥ 0.50 → 穏やか
+  4. independence ≥ 0.66 かつ energy < 0.50 → 寡黙
+  5. energy < 0.30 → 無表情
+  6. それ以外 → 微笑
+- 関係台帳： 実行時状態に1本持つ（例： SPEC/runtime/ojou-relations.yaml）。ペルソナ毎に次を記録する：
+
+```yaml
+relations:
+  maid-13:
+    surface_personality: "<表に出す性格（本音と違ってよい）>"
+    affection: 62                # 0〜100。じいや・ばあやは数値ではなく "天元突破" で固定
+    loyalty: "中"                # 低/中/高
+    history: [ { at: "<日時>", event: "<お嬢の行い>", delta: +3, reason: "<理由>" } ]
+```
+
+- 初期値の生成： affection は 50 を基点に、ペルソナのプロフィール（性格・年齢枠）とお嬢のパラメータ（善悪・元気・自立）の相性で ±20 の範囲で決め、理由を添えて記録する。loyalty も同様に初期決定する。好感度・忠誠度が低くても命令への服従は変わらない（効くのは口調・積極性・距離感）。
